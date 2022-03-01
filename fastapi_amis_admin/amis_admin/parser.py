@@ -71,6 +71,8 @@ class AmisParser():
             elif issubclass(self.modelfield.type_, datetime.datetime):
                 kwargs['type'] = 'input-datetime'
                 kwargs['format'] = 'YYYY-MM-DDTHH:mm:ss'
+                #  给DataTime组件添加 当前时间 快捷方式
+                kwargs['shortcuts'] = ["now"]# ,"today","yesterday","tomorrow"]
             elif issubclass(self.modelfield.type_, datetime.date):
                 kwargs['type'] = 'input-date'
                 kwargs['format'] = 'YYYY-MM-DD'
